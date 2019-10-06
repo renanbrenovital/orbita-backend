@@ -37,7 +37,7 @@ API ficará diponível para qualquer client (Insomina, Postman, Aplicação web 
 
 ## Testes
 
-1 - Setar variável de ambiente:
+1 - Setar variável de ambiente (via linha de comando):
 
 `NODE_ENV=test`
 
