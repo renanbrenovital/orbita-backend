@@ -18,11 +18,15 @@
 
 `docker-compose up`
 
-4 - Criar tabelas **users e installations** no banco de dados:
+4 - Instalar dependências (abrir aba nova do terminal):
 
-`yarn dbmigrate` (abrir aba nova do terminal)
+`yarn install`
 
-5 - Insertir dados na tabela **installations**:
+5 - Criar tabelas **users e installations** no banco de dados:
+
+`yarn dbmigrate`
+
+6 - Insertir dados na tabela **installations**:
 
 `yarn dbinserts`
 
