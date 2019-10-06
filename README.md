@@ -33,7 +33,7 @@
 ## Iniciar API
 
 Obs.: A variável de ambiente DB_HOST no arquivo .end está com o ip `192.168.99.100` (meu docker funciona com essa configuração).
-Dependendo de como seu docker está configurado altere esse ip para `localhost`.
+Dependendo de como seu docker está configurado altere esse ip para `localhost`. Se tiver realizado testes e setado a variável de ambiente para NODE_ENV=test ... voltar para NODE_ENV=development
 
 1 - Verificar se o container **orbita-postgres** está ativo:
 
