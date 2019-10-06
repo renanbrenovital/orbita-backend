@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  db:
+    image: postgres:10.4-alpine
+    container_name: orbita-postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=orbita
+    ports:
+      - "5432:5432"
+    volumes:
+      - dbdata:/var/lib/postgresql/dbdata
+
+volumes:
+  dbdata:

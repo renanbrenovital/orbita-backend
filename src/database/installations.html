@@ -1,0 +1,68 @@
+<button id="myButton">DOWNLOAD INSTALLATIONS (JSON TO CSV)</button>
+
+<script>
+
+  const objectToCsv = function (data) {
+    const csvRows = [];
+
+    const headers = Object.keys(data[0]);
+
+    csvRows.push(headers.join(','));
+
+    for (const row of data) {
+      const values = headers.map(header => {
+        let value = '';
+
+        if (header === 'cost' || header === 'zip_code' || header === 'system_size') {
+          value = row[header];
+        }
+        else if (header === 'installation_date') {
+          value = "`" + row[header] + "`";
+        }
+        else {
+          value = `"${row[header]}"`;
+        }
+
+        return value;
+      });
+
+      csvRows.push(values.join(','));
+    }
+
+    return csvRows.join('\n');
+  };
+
+  const download = function (data) {
+    const blob = new Blob([data], { type: 'text/csv' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.setAttribute('hidden', '');
+    a.setAttribute('href', url);
+    a.setAttribute('download', 'installations.csv');
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+  const getJson = async function () {
+    const jsonUrl =
+      "https://drive.google.com/uc?authuser=0&id=1dbURdS6TjfnweoFSB_0vqJpn77QJFXoZ&export=download";
+    const response = await fetch(jsonUrl);
+    const json = await response.json();
+
+    const data = json.map(row => ({
+      installation_date: row["Installation Date"],
+      data_provider: row["Data Provider"],
+      system_size: row["System Size"],
+      zip_code: row["Zip Code"],
+      state: row["State"],
+      cost: row["Cost"],
+    }));
+
+    const csvData = objectToCsv(data);
+    download(csvData);
+  }
+
+  const button = document.getElementById("myButton");
+  button.addEventListener("click", getJson);
+</script>
