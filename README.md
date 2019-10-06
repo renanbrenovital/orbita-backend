@@ -6,15 +6,23 @@
 
 ## Instalação
 
-1 - Criar banco de dados **orbita** no Postgres com Docker:
+1 - Clonar repositório:
+
+`git clone https://github.com/renanbrenovital/orbita-backend.git`
+
+2 - Entrar na pasta:
+
+`cd orbita-backend`
+
+3 - Criar banco de dados **orbita** no Postgres com Docker:
 
 `docker-compose up`
 
-2 - Criar tabelas **users e installations** no banco de dados:
+4 - Criar tabelas **users e installations** no banco de dados:
 
 `yarn dbmigrate`
 
-3 - Insertir dados na tabela **installations**:
+5 - Insertir dados na tabela **installations**:
 
 `yarn dbinserts`
 
