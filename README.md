@@ -20,7 +20,7 @@
 
 4 - Criar tabelas **users e installations** no banco de dados:
 
-`yarn dbmigrate`
+`yarn dbmigrate` (abrir aba nova do terminal)
 
 5 - Insertir dados na tabela **installations**:
 
