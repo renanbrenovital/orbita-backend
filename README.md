@@ -51,4 +51,4 @@ Para ter uma visão completa dos testes abra o arquivo: `backend/__tests__/cover
 
 Arquivo de configuração da ferramenta insomania com todas as rotas organizadas por pastas:
 
-![](Insomnia.json)
+[Insomnia.json](https://github.com/renanbrenovital/orbita-backend/blob/master/Insomnia.json)
